@@ -1,0 +1,171 @@
+body {
+    background-color: #000000;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==');
+    color: #00FF00; /* 經典終端機綠字 */
+    font-family: "MingLiU", "新細明體", "細明體", "Times New Roman", serif;
+    cursor: crosshair;
+}
+
+/* 經典的連結配色 */
+a:link { color: #0000FF; text-decoration: underline; }
+a:visited { color: #800080; }
+a:hover { color: #FF0000; }
+a:active { color: #FF0000; }
+
+
+.content-box {
+    /* 白底表格置中 */ 
+    width: 85%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 5px ridge #808080;
+    padding: 10px;
+}
+
+/* 模擬當時常見的 <blink> (現代瀏覽器已棄用，用 CSS 模擬) */
+.blink {
+    animation: blinker 0.6s linear infinite;
+    color: #FF0000;
+    font-weight: bold;
+}
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* 也很常見的 spin */
+.spin, .spin-gif {
+    display: inline-block;
+    animation: spin 2s linear infinite;
+    font-size: 24px;
+}
+.hover-spin:hover {
+    animation: spin 2s linear infinite;
+}
+.hover-spin-var:hover {
+    animation: spin var(--duration) linear infinite;
+}
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* 也要彈來彈去的 */
+.bounce {
+    display: inline-block;
+    animation: bounce 2s ease-in-out infinite;
+    font-size: 24px;
+}
+.hover-bounce:hover {
+    animation: bounce 2s ease-in-out infinite;
+}
+.hover-bounce-var:hover {
+    animation: bounce var(--duration) ease-in-out infinite;
+}
+@keyframes bounce {
+    50% { transform: translateY(-10px); }
+}
+
+/* 放大縮小 */
+.scale {
+    display: inline-block;
+    animation: scale 2s ease-in-out infinite;
+    font-size: 24px;
+}
+.hover-scale:hover {
+    animation: scale 2s ease-in-out infinite;
+}
+.hover-scale-var:hover {
+    animation: scale var(--duration) ease-in-out infinite;
+}
+@keyframes scale {
+    50% { transform: scale(1.2); }
+}
+
+
+/* 火焰字體喔喔喔 */
+.flame-text {
+    font-weight: bold;
+    text-shadow: 0 -2px 4px #FFF, 0 -6px 10px #FF0, 0 -10px 20px #FF8000, 0 -18px 40px #F00;
+    /* margin: 15px 0; */
+}
+
+/* 文字藝術師 */
+.wordart-3d {
+    /* font-family: "Impact", "標楷體", "Arial Black", sans-serif; */
+    font-weight: bold;
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 0.1px #FFFFFF11; 
+    text-shadow: 
+        02px 02px 00px #CCCCCC
+        04px 04px 00px #AAAAAA,
+        06px 06px 00px #888888,
+        08px 08px 00px #666666,
+        10px 10px 00px #444444,
+        12px 12px 15px rgba(0,0,0,0.8);
+    transform: skewX(-15deg) rotate(-5deg);  /* screwX */
+    display: inline-block;
+    letter-spacing: 2px;
+    color: #FFFFFF; /* 底層文字顏色，避免透明 */
+}
+.wordart-3d::before {
+    content: attr(content);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(78.763deg, #FF0000 0%, #FF9900 16%, #FFFF00 33%, #33FF00 50%, #00FFFF 66%, #0000FF 83%, #9900FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: none; /* 漸層層不需要陰影 */
+    z-index: 1;
+}
+
+/* 七彩分隔線 */
+.rainbow-hr {
+    height: 5px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    border: none;
+    margin: 20px 0;
+}
+
+
+.visitor-counter {
+    background-color: #000000;
+    color: #00FF00;
+    font-family: "Courier New", monospace;
+    font-size: 20px;
+    padding: 3px 8px;
+    border: 3px inset #666666;
+    letter-spacing: 3px;
+}
+
+/* 復古底下網頁按鈕/徽章 (88x31) */
+.badge {
+    display: inline-block;
+    width: 88px;
+    height: 31px;
+    border: 2px outset #DDDDDD;
+    background-color: #000080;
+    color: #FFFFFF;
+    font-size: 10px;
+    text-align: center;
+    line-height: 12px;
+    padding-top: 2px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 2px;
+    text-decoration: none !important;
+}
+.badge b { color: #FFFF00; font-size: 12px; }
+
+/* 強制表格格線顯示 */
+.layout-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.layout-table td {
+    vertical-align: top;
+    padding: 8px;
+}
